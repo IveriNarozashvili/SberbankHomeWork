@@ -3,6 +3,8 @@ package managers;
 
 import pages.IpotekaPage;
 import pages.StartPage;
+import steps.IpotekaPageSteps;
+import steps.StartPageSteps;
 
 public class ManagerPages {
 
@@ -11,6 +13,8 @@ public class ManagerPages {
 
     private StartPage startPage;
     private IpotekaPage ipotekaPage;
+    private StartPageSteps startPageSteps;
+    private IpotekaPageSteps ipotekaPageSteps;
 
 
     private ManagerPages() {
@@ -36,6 +40,20 @@ public class ManagerPages {
             ipotekaPage = new IpotekaPage();
         }
         return ipotekaPage;
+    }
+
+    public StartPageSteps getStartPageSteps() {
+        if (startPageSteps == null) {
+            startPageSteps = new StartPageSteps();
+        }
+        return startPageSteps;
+    }
+
+    public IpotekaPageSteps getIpotekaPageSteps() {
+        if (ipotekaPageSteps == null) {
+            ipotekaPageSteps = new IpotekaPageSteps();
+        }
+        return ipotekaPageSteps;
     }
 
 }

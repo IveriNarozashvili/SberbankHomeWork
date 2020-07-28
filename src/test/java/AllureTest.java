@@ -1,3 +1,4 @@
+import io.qameta.allure.Description;
 import managers.InitManager;
 import managers.ManagerPages;
 import org.junit.After;
@@ -15,9 +16,10 @@ public class AllureTest {
         InitManager.initFramework();
     }
 
+    @Description("Проверка кредитного калькулятора")
     @Test
     public void selectIpoteka(){
-        ManagerPages.getManagerPages().getStartPage()
+        ManagerPages.getManagerPages().getStartPageSteps()
                 .selectBaseMenu("Ипотека")
                 .selectSubMenu("Ипотека на готовое жильё")
                 .fillField("Стоимость недвижимости",5180000)

@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty"},
+        plugin = {"io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"},
         glue = {"stepdefs"},
         features = {"src/test/resources/"},
         tags = {"@checkCalculatorIpoteka"}

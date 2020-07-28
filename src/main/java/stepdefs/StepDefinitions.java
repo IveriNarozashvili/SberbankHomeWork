@@ -32,6 +32,6 @@ public class StepDefinitions {
 
     @Then("выполняем проверку что параметр {string} равен значению {string}")
     public void checkParam(String nameParametr, String value) {
-        ipotekaPageSteps.checkParam(nameParametr, value);
+        ipotekaPageSteps.checkResult(nameParametr, value);
     }
 }
