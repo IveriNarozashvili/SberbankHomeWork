@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Передаваемый параметр') {
             steps {
-                echo "${PARAM}"
+                echo "${BRANCH}"
             }
         }
         stage('Build process') {

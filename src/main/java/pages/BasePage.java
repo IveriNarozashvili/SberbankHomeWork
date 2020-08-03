@@ -22,7 +22,7 @@ public class BasePage {
     protected JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
 
-    protected WebDriverWait wait = new WebDriverWait(getDriver(), 10, 1000);
+    protected WebDriverWait wait = new WebDriverWait(getDriver(), 25, 5000);
 
 
     public BasePage() {
