@@ -3,25 +3,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Передаваемый параметр') {
-            steps {
-                echo "${BRANCH}"
-            }
+        stage('Очистка') {
+            cleanWs notFailBuild: true
         }
         stage('Build process') {
-            steps {
-                withMaven(jdk: 'jdk8', maven: 'maven') {
-                    sh "mvn clean test ${PARAM}"
-                }
+            withMaven(jdk: 'jdk8', maven: 'maven') {
+                sh "mvn clean test -Dtags=${PARAM}"
             }
         }
         stage('Allure report generation') {
-            steps {
-                allure includeProperties: false,
-                        jdk: 'jdk',
-                        report: 'target/allure-report',
-                        results: [[path: 'target/allure-results']]
-                }
-            }
+            allure includeProperties: false,
+                    jdk: 'jdk',
+                    report: 'target/allure-report',
+                    results: [[path: 'target/allure-results']]
         }
     }
+}
