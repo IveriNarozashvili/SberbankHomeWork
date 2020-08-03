@@ -4,10 +4,11 @@ pipeline {
 
     stages {
         stage('Очистка') {
-            cleanWs notFailBuild: true
+            cleanWs()
         }
         stage('Build process') {
-            withMaven(jdk: 'jdk8', maven: 'maven') {
+            withMaven(jdk: 'jdk', maven: 'maven') {
+                // some block
                 sh "mvn clean test -Dtags=${PARAM}"
             }
         }
